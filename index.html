@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Times Group - Annual Dinner 2025</title>
+
+  <link rel="stylesheet" href="./Assets/css/styles.css" />
+  <style>
+    #pagestep1 {
+      justify-content: flex-start;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @font-face {
+      font-family: font_notice;
+      src: url("./Assets/Fonts/GOTHIC.TTF");
+    }
+
+    @font-face {
+      font-family: font_input;
+      src: url("./Assets/Fonts/Montserrat-VariableFont_wght.ttf");
+    }
+
+    @font-face {
+      font-family: font_button;
+      src: url("./Assets/Fonts/Clesmont.ttf");
+    }
+
+    #btn-step {
+      display: none;
+    }
+
+    #timedraw {
+      display: none;
+    }
+
+    #step-bottle {
+      display: none;
+    }
+
+    #step-cauchuc {
+      display: none;
+    }
+
+    #step-result {
+      display: none;
+    }
+
+    #step-lucky {
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+
+    #bg {
+      margin: 0;
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #step-thankyou {
+      display: none;
+      position: absolute;
+    top: 0;
+    }
+
+    .tagline {}
+
+    .text-notice {
+      font-family: font_notice !important;
+      font-weight: bold;
+    }
+
+    #YepNestle {
+      display: none;
+      animation-name: fade-in;
+      animation-duration: 2s;
+      /* scale: 0.9; */
+    }
+
+    #bg {
+      height: 100vh;
+    }
+
+
+
+    .text-wrapper {
+      font-family: font_button !important;
+    }
+
+    input[type="text"] {
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border: 3px solid white;
+    }
+
+    input::placeholder {
+      color: white;
+    }
+
+    .input-detail {
+      color: white;
+      border: 1px solid white;
+      border-radius: 4px;
+      padding: 1%;
+      background: transparent;
+      font-family: font_input;
+      font-weight: 400;
+      font-size: medium;
+      width: 85%;
+      text-align: center;
+      min-height: 25px;
+    }
+
+    #step-thankyou {
+      display: none;
+    }
+
+    .loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #d9d451;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+#loader{
+  position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  z-index: 2;
+  background-color: black;
+  opacity: 70%;
+}
+  </style>
+</head>
+
+<body id="bg">
+  <img src="./Assets/KV_holo1610.png" style="position: absolute; top: 0; height: 100vh; width: 100%;z-index:-1"
+    alt="Alternate Text" />
+  <audio id="introYEP">
+    <source src="./Assets/sounds/nhacnen_gieoque_02.mp3" type="audio/mp3" />
+    sound quay so
+  </audio>
+
+  <div id="overlay">
+    <!-- <img src="./Assets/img/spinphonwhite.png" width="350" alt="" /> -->
+    <p>Xoay dọc màn hình để có trải nghiệm tốt nhất</p>
+  </div>
+<div id="loader">
+  <span class="loader"></span>
+</div>
+  <div class="home" id="intro">
+    <div class="div">
+      <div class="overlap" style="justify-content: flex-start;">
+        <div style="width: 95%;    display: flex;justify-content: center;">
+          <img src="./Assets/logo.png" class="logo" />
+        </div>
+
+        <img class="tagline" src="./Assets/tagline.png" />
+        <img class="text-gradient" src="./Assets/button-label.png" id='intro-btn' style="margin-top: 20%;"
+          onclick="yepnestle()" />
+        <!-- <div class="group" style="margin-top: 5%">
+            <div class="text-gradient"id='intro-btn' onclick="yepnestle()"></div>
+            
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div id="step-thankyou" class="flex-center container">
+    <div style="width: 95%;    display: flex;justify-content: center;">
+      <img src="./Assets/logo.png" class="logo">
+    </div>
+    <img onclick="tohome()" style="object-fit: cover;object-fit: cover;" src="./Assets/tagline.png" class="tagline" />
+    <p id="noticestep4-1" class="text-notice" style="margin: 0;margin-top: 10%;font-size:x-larger;margin: 15% 0;">
+      CHECK-IN SUCCESS
+    </p>
+    <!-- <img class="dragon" src="./Assets/img/Elements/Snake1.png"width="100%" /> -->
+  </div>
+  <div id="YepNestle" class="home">
+    <div class="div">
+      <div class="overlap" style="justify-content: flex-start">
+        <div id="pagestep1" class="container flex-center">
+          <div style="width: 95%;    display: flex;justify-content: center;">
+            <img src="./Assets/logo.png" class="logo">
+          </div>
+
+
+          <img class="tagline" onclick="tohome()" src="./Assets/tagline.png" />
+
+          <div class="text-notice" style="margin-top: 10%;">
+            <p style="    padding-bottom: 2%;">PLEASE ENTER YOUR INFORMATION</p>
+            <p>TO CHECK-IN</p>
+          </div>
+
+          <div class="flex-center" style="width: 80%; flex-direction:column">
+            <input class="input-detail" type="text"style="margin-top: 5%;" placeholder="ENTER FULL NAME" id="msnv" />
+            <input class="input-detail" style="margin-top: 3%; display: none;" type="date" value="2024-12-31"
+              id="dob" />
+          </div>
+          <img class="text-gradient" src="./Assets/button-label.png" id='btnRun' onclick="find_MANVbyName()" />
+
+          <!-- <div class="group">
+            
+          <div id="btnRun" class="text-gradient"onclick="find_MANVbyName()" style="margin-top: 10px">
+             
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="./Assets/js/scripts.js"></script>
+
+  <script>
+    function fadeIn() {
+      document.getElementById("YepNestle").style.display = "flex";
+    }
+    function runAnimate() {
+      // document.getElementById("intro").style.animation="fade-out 10s 1"
+      document.getElementById("intro").style.display = "none"
+      fadeIn()
+    }
+    function yepnestle() {
+      runAnimate()
+      document.getElementById("introYEP").play();
+    }
+  </script>
+</body>
+
+</html>
